@@ -1,6 +1,12 @@
 package pl.devopsi.akademia;
 
+import pl.devopsi.akademia.animals.Animal;
+import pl.devopsi.akademia.animals.Type;
+import pl.devopsi.akademia.animals.Zoo;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Main {
@@ -27,15 +33,29 @@ public class Main {
         System.out.println(Arrays.toString(changeToAbsoluteNumber((arra3))));
 
         System.out.println(femaleOrMaleName("Paweł"));
+
+
+        List<Animal> animalList = new ArrayList<>();
+        animalList.add(new Animal("Żaba",2010, Type.REPTILE));
+        animalList.add(new Animal("Wonsz",1999,Type.AMPHIBIAN));
+
+        Animal animal = new Animal("Kamleon",1299,Type.AMPHIBIAN);
+
+        Zoo zoo = new Zoo("Praskie", 2010,animalList);
+        zoo.addAnimal(animal);
+        zoo.showAnimals();
+
+        System.out.println(zoo.aveAge());
+        zoo.aveAge();
     }
 
 
     public static void printIfEvenNumber(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                System.out.println("Liczba " + array[i] + " jest parzysta");
+        for (int element : array) {
+            if (element % 2 == 0) {
+                System.out.println("Liczba " + element + " jest parzysta");
             } else {
-                System.out.println(array[i]);
+                System.out.println(element);
             }
         }
     }

@@ -1,4 +1,5 @@
-package pl.devopsi.akademia;
+package pl.devopsi.akademia.animals;
+
 
 import java.util.List;
 
@@ -23,6 +24,13 @@ public class Zoo {
     }
 
 
+    public int aveAge(){
+        int sumOfAges = 0;
+        for (Animal animal : animals) {
+            sumOfAges += animal.getAge();
+        }
+        return sumOfAges / animals.size();
+    }
 
     public List<Animal> getAnimals() {
         return animals;

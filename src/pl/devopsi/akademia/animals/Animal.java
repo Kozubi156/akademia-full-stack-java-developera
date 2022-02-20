@@ -1,6 +1,6 @@
-package pl.devopsi.akademia;
+package pl.devopsi.akademia.animals;
 
-public class Animal {
+public class Animal implements Speakable {
     private static int CURRENT_YEAR = 2022;
     private String name;
     private int yearOfBirth;
@@ -67,5 +67,10 @@ public class Animal {
                 ", yearOfBirth=" + getYearOfBirth() +
                 ", type=" + getType() +
                 '}';
+    }
+
+    @Override
+    public void sound() {
+        System.out.println("Animal make sound!");
     }
 }
