@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Zoo {
 
-    private String name;
-    private int yearOfEstablismnet;
-    private List<Animal> animals;
+    private final String name;
+    private final int yearOfEstablismnet;
+    private final List<Animal> animals;
 
     public Zoo(String name, int yearOfEstablismnet, List<Animal> animals) {
         this.name = name;
@@ -15,21 +15,27 @@ public class Zoo {
         this.animals = animals;
     }
 
-    public void addAnimal(Animal animal){
+    public void addAnimal(Animal animal) {
         animals.add(animal);
     }
 
-    public void showAnimals(){
+    public void showAnimals() {
         System.out.println(animals.toString());
     }
 
 
-    public int aveAge(){
+    public int aveAge() {
         int sumOfAges = 0;
         for (Animal animal : animals) {
             sumOfAges += animal.getAge();
         }
         return sumOfAges / animals.size();
+    }
+
+    public void showInfo() {
+        System.out.println("Sredni wiek zwierzat " + aveAge());
+        System.out.println("Nazwa zoo " + name);
+        System.out.println("Rok założenia " + yearOfEstablismnet);
     }
 
     public List<Animal> getAnimals() {

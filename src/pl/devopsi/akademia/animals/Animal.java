@@ -1,7 +1,7 @@
 package pl.devopsi.akademia.animals;
 
 public class Animal implements Speakable {
-    private static int CURRENT_YEAR = 2022;
+    private static final int CURRENT_YEAR = 2022;
     private String name;
     private int yearOfBirth;
     private Type type;
@@ -71,6 +71,6 @@ public class Animal implements Speakable {
 
     @Override
     public void sound() {
-        System.out.println("Animal make sound!");
+        System.out.println("łeeełaaaałee Animal make sound!");
     }
 }

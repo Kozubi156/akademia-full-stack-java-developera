@@ -4,8 +4,9 @@ public class Dog extends Animal implements Speakable {
 
     private String color;
 
-    public Dog(String name, int yearOfBirth, Type type) {
+    public Dog(String name, int yearOfBirth, Type type, String color) {
         super(name, yearOfBirth, type);
+        this.color = color;
     }
 
     public String getColor() {

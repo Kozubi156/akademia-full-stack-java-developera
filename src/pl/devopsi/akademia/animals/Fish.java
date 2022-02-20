@@ -4,8 +4,9 @@ public class Fish extends Animal implements Speakable{
 
     private int finNumber;
 
-    public Fish(String name, int yearOfBirth, Type type) {
+    public Fish(String name, int yearOfBirth, Type type, int finNumber) {
         super(name, yearOfBirth, type);
+        this.finNumber = finNumber;
     }
 
     public int getFinNumber() {
@@ -18,6 +19,6 @@ public class Fish extends Animal implements Speakable{
 
     @Override
     public void sound() {
-        System.out.println("Boooll!");
+        System.out.println("Bol! Bol!");
     }
 }

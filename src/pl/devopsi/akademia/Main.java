@@ -1,8 +1,6 @@
 package pl.devopsi.akademia;
 
-import pl.devopsi.akademia.animals.Animal;
-import pl.devopsi.akademia.animals.Type;
-import pl.devopsi.akademia.animals.Zoo;
+import pl.devopsi.akademia.animals.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,24 +27,39 @@ public class Main {
         int[] pointArray = {2, 6, 6};
         printGradeResults(giveGrade(pointArray));
 
-        double[] arra3 = {-1.0,-3.0,6.0,-9.0,10.0};
+        double[] arra3 = {-1.0, -3.0, 6.0, -9.0, 10.0};
         System.out.println(Arrays.toString(changeToAbsoluteNumber((arra3))));
 
         System.out.println(femaleOrMaleName("Paweł"));
 
 
         List<Animal> animalList = new ArrayList<>();
-        animalList.add(new Animal("Żaba",2010, Type.REPTILE));
-        animalList.add(new Animal("Wonsz",1999,Type.AMPHIBIAN));
+        animalList.add(new Animal("Żaba", 2010, Type.REPTILE));
+        animalList.add(new Animal("Wonsz", 1999, Type.AMPHIBIAN));
 
-        Animal animal = new Animal("Kamleon",1299,Type.AMPHIBIAN);
+        Animal animal = new Animal("Kamleon", 1299, Type.AMPHIBIAN);
 
-        Zoo zoo = new Zoo("Praskie", 2010,animalList);
+        Zoo zoo = new Zoo("Praskie", 2010, animalList);
         zoo.addAnimal(animal);
         zoo.showAnimals();
 
         System.out.println(zoo.aveAge());
         zoo.aveAge();
+
+        Snake snake = new Snake("Wonsz Janusz", 1900, Type.REPTILE, 1.8);
+        Fish fish = new Fish("Złota", 2009, Type.AMPHIBIAN, 5);
+        Dog dog = new Dog("Szarik", 2001, Type.MAMMAL, "Black");
+
+        List<Speakable> animals = new ArrayList<>();
+        animals.add(snake);
+        animals.add(dog);
+        animals.add(fish);
+        for (Speakable speakable : animals) {
+            speakable.sound();
+        }
+
+        zoo.showInfo();
+
     }
 
 
@@ -84,8 +97,8 @@ public class Main {
         }
     }
 
-    public static void printGradeResults(char grade){
-        switch (grade){
+    public static void printGradeResults(char grade) {
+        switch (grade) {
             case 'A':
                 System.out.println("Super");
                 break;
@@ -100,15 +113,15 @@ public class Main {
         }
     }
 
-    public static double[] changeToAbsoluteNumber(double[] array){
+    public static double[] changeToAbsoluteNumber(double[] array) {
         for (int i = 0; i < array.length; i++) {
-         array[i] =  Math.abs(array[i]);
+            array[i] = Math.abs(array[i]);
         }
         return array;
     }
 
-    public static Gender femaleOrMaleName(String name){
-        if(name.charAt(name.length() -1 ) == 'a'){
+    public static Gender femaleOrMaleName(String name) {
+        if (name.charAt(name.length() - 1) == 'a') {
             return Gender.WOMEN;
         } else {
             return Gender.MAN;
