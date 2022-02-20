@@ -1,5 +1,7 @@
 package pl.devopsi.akademia;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,10 +14,18 @@ public class Main {
         System.out.println("Zmiena val_string ma wartosć: " + val_string);
         System.out.println("Zmiena val_double ma wartosć: " + val_double);
 
-
-        int[] array = {2,21,3,3,2,4,6,1,4,2};
+        int[] array = {2, 21, 3, 3, 2, 4, 6, 1, 4, 2};
         printIfEvenNumber(array);
-        addNumbersInWhileLoopAndPrint(1,500);
+
+        addNumbersInWhileLoopAndPrint(1, 500);
+
+        int[] pointArray = {2, 6, 6};
+        printGradeResults(giveGrade(pointArray));
+
+        double[] arra3 = {-1.0,-3.0,6.0,-9.0,10.0};
+        System.out.println(Arrays.toString(changeToAbsoluteNumber((arra3))));
+
+        System.out.println(femaleOrMaleName("Paweł"));
     }
 
 
@@ -29,12 +39,58 @@ public class Main {
         }
     }
 
-    public static void addNumbersInWhileLoopAndPrint(int startNumber, int endNumber){
+    public static void addNumbersInWhileLoopAndPrint(int startNumber, int endNumber) {
         int sum = 0;
-        while (startNumber <= endNumber){
+        while (startNumber <= endNumber) {
             sum += startNumber;
             startNumber++;
         }
         System.out.println(sum);
+    }
+
+    public static char giveGrade(int[] array) {
+        double sum = 0;
+        for (int j : array) {
+            sum += j;
+        }
+        double avarage = sum / array.length;
+        if (avarage >= 4) {
+            return 'A';
+        } else if (avarage < 4 && avarage >= 3) {
+            return 'B';
+        } else {
+            return 'C';
+        }
+    }
+
+    public static void printGradeResults(char grade){
+        switch (grade){
+            case 'A':
+                System.out.println("Super");
+                break;
+            case 'B':
+                System.out.println("Średnio");
+                break;
+            case 'C':
+                System.out.println("Słabo");
+                break;
+            default:
+                System.out.println("cos nie tak...");
+        }
+    }
+
+    public static double[] changeToAbsoluteNumber(double[] array){
+        for (int i = 0; i < array.length; i++) {
+         array[i] =  Math.abs(array[i]);
+        }
+        return array;
+    }
+
+    public static Gender femaleOrMaleName(String name){
+        if(name.charAt(name.length() -1 ) == 'a'){
+            return Gender.WOMEN;
+        } else {
+            return Gender.MAN;
+        }
     }
 }
