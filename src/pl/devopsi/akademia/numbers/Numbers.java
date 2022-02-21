@@ -1,5 +1,7 @@
 package pl.devopsi.akademia.numbers;
 
+import java.util.Arrays;
+
 public class Numbers {
 
     private int[] numbers;
@@ -16,7 +18,15 @@ public class Numbers {
         return lambda.avg(numbers);
     }
 
-    public void avg(Lambda3 lambda){
+    public void show(Lambda3 lambda){
         lambda.show(numbers);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Numbers{" +
+                "numbers=" + Arrays.toString(numbers) +
+                '}';
     }
 }

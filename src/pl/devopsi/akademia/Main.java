@@ -2,6 +2,10 @@ package pl.devopsi.akademia;
 
 import pl.devopsi.akademia.animals.*;
 import pl.devopsi.akademia.gender.Gender;
+import pl.devopsi.akademia.numbers.Lambda1;
+import pl.devopsi.akademia.numbers.Lambda2;
+import pl.devopsi.akademia.numbers.Lambda3;
+import pl.devopsi.akademia.numbers.Numbers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,6 +65,17 @@ public class Main {
 
         zoo.showInfo();
 
+        int[] arrayNumbers = {2,4,5,};
+        Numbers numbers = new Numbers(arrayNumbers);
+
+        Lambda1 lambda1 = arrayOfNumbers -> Arrays.stream(arrayOfNumbers).sum();
+        System.out.println("Wyswietlenie sumy elmentów z tablicy liczb: " + numbers.add(lambda1));
+
+        Lambda2 lambda2 = arrayOfNumbers -> (int) Arrays.stream(arrayOfNumbers).average().getAsDouble();
+        System.out.println("Wyswietlen sredniej artmentycznej z tablicy licz: " + numbers.avg(lambda2));
+
+        Lambda3 lambda3 = arrayOfNumbers -> Arrays.stream(arrayOfNumbers).filter(number -> number > 2).forEach(System.out::println);
+        numbers.show(lambda3);
     }
 
 
