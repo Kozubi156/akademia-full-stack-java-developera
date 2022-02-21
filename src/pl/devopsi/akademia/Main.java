@@ -1,6 +1,7 @@
 package pl.devopsi.akademia;
 
 import pl.devopsi.akademia.animals.*;
+import pl.devopsi.akademia.gender.Gender;
 
 import java.util.ArrayList;
 import java.util.Arrays;
