@@ -10,6 +10,7 @@ import pl.devopsi.akademia.numbers.Numbers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 
 public class Main {
@@ -35,7 +36,7 @@ public class Main {
         double[] arra3 = {-1.0, -3.0, 6.0, -9.0, 10.0};
         System.out.println(Arrays.toString(changeToAbsoluteNumber((arra3))));
 
-        System.out.println(femaleOrMaleName("Paweł"));
+        System.out.println(femaleOrMaleName("KASIA"));
 
 
         List<Animal> animalList = new ArrayList<>();
@@ -70,6 +71,7 @@ public class Main {
 
         Lambda1 lambda1 = arrayOfNumbers -> Arrays.stream(arrayOfNumbers).sum();
         System.out.println("Wyswietlenie sumy elmentów z tablicy liczb: " + numbers.add(lambda1));
+
 
         Lambda2 lambda2 = arrayOfNumbers -> (int) Arrays.stream(arrayOfNumbers).average().getAsDouble();
         System.out.println("Wyswietlen sredniej artmentycznej z tablicy licz: " + numbers.avg(lambda2));
@@ -137,6 +139,7 @@ public class Main {
     }
 
     public static Gender femaleOrMaleName(String name) {
+        name = name.toLowerCase();
         if (name.charAt(name.length() - 1) == 'a') {
             return Gender.WOMEN;
         } else {
